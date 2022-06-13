@@ -1,0 +1,560 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+*{
+     margin: 0;
+     padding: 0;
+}
+:root{
+     --color1:#111111;
+}
+
+html,body{height: 100%; font-family: 'Anek Tamil', sans-serif; background-color: #eee;}
+a{text-decoration: none; color: var(--color1);}
+li{list-style: none;}
+p{
+     line-height: 1.5;
+     padding: 10px 0;
+}
+.head2{
+     font-size: 1.3em;
+     padding-bottom: 10px;
+}
+a.head,
+span.head{
+     font-weight: bold;
+     font-size: 1.5em;
+}
+
+.desktopHeader nav a::before{
+      content: '';
+      transition: .5s all ease;
+      background-color: #111;
+      position: absolute;
+      bottom: -3px;
+      width: 0;
+      height: 3px;
+      border-radius: 2px;
+         
+}
+
+.desktopHeader nav .aa:hover::before{
+      width: 100%;
+}
+.desktopHeader nav .aa:hover{
+     color: #111;
+     text-decoration: none;
+}
+
+
+/* nav>.explore>.options{
+     display: none;
+} */
+a:hover {
+     color: #111;
+     text-decoration: unset;
+}
+
+header{
+     height: 100px;
+     padding: 0 30px;
+     background-color: #fff;
+}
+.header{
+     z-index: 100;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     height: 100px;
+     padding: 0 30px;
+     background-color: #fff;
+}
+
+/* nav */
+.desktopHeader nav{ 
+     display: flex;
+     width: 500px;
+     align-items: center;
+     justify-content: space-between;
+}
+.desktopHeader nav a{
+     text-transform: uppercase;
+     font-family: 'Roboto Mono', monospace;
+     position: relative;
+     color: #111;
+}
+.desktopHeader nav .page::after{
+     content: url("../img/icons/page.svg");
+     position: absolute;
+     bottom: -10px;
+     left: 20%;
+}
+.desktopHeader nav>.explore{
+      position: relative;
+}
+.desktopHeader nav>.explore>.one{
+     display: flex;
+}
+.desktopHeader .bridge{
+     position: absolute;
+     background-color: transparent;
+     width: 91px;
+     height: 40px;
+     display: none;
+}
+.desktopHeader nav>.explore>.one:hover ~ .options,
+.desktopHeader nav>.explore>.one:hover ~.bridge,
+.desktopHeader nav>.explore>.bridge:hover,
+.desktopHeader nav>.explore>.bridge:hover + .options{
+     transition: .35s all ease-in;
+     opacity: 1;
+     transform: translateY(0px);   
+     display: block;  
+     height: 250px;
+}
+
+
+.desktopHeader nav a:hover::after{
+     display: none;
+}
+.desktopHeader nav>.explore>.options:hover{
+     opacity: 1;
+     transform: translateY(0px); 
+     height: 250px; 
+}
+.desktopHeader nav>.explore>.options{
+     position: absolute;
+     background-color: white;
+     width: 260px;
+     height: 0px;
+     left: -40px;
+     box-shadow: 3px 6px 13px rgba(0, 0, 0, 0.192);
+     z-index: 5;
+     border-radius: 0 0 5px 5px;
+     overflow: hidden;
+     opacity: 0;
+     transform: translateY(-10px);  
+}
+.desktopHeader nav>.explore>.options>ul{
+     width: inherit;
+     margin: auto;
+     height: 100%;
+     padding-left: 0;
+}
+.desktopHeader nav>.explore>.options>ul li{
+     cursor: pointer;
+     height: 50px;
+     width: 100%;
+     padding-left: 10px;
+     
+}
+.desktopHeader nav>.explore>.options>ul li a::before{
+     content: unset;
+}
+.desktopHeader nav>.explore>.options>ul li a{
+      cursor: pointer;
+      color: #111111;
+      width: 100%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.desktopHeader nav>.explore>.options>ul li:hover{
+     color: #fff;
+     background-color: #111;
+}
+.desktopHeader nav>.explore>.options>ul li:hover a{
+     color: #fff;
+}
+
+/* side */
+.desktopHeader .side{
+     display: flex;
+     align-items: center;
+     position: relative;
+}
+
+.desktopHeader .side img{
+     width: 40px;
+     align-self: flex-end;
+     cursor: pointer;
+}
+.desktopHeader .side .account{
+     margin-left: 30px;
+}
+
+.desktopHeader .side .join{
+     border: 2px solid white;
+     padding: 6px 21px;
+     border-radius: 10px;
+     text-transform: capitalize;
+     font-family: 'Roboto Mono', monospace;
+     cursor: pointer;
+}
+.desktopHeader .active .side .join{
+     border: 2px solid #111;
+     color: #111;
+}
+.desktopHeader .side .join:hover{
+      background-color: #318285;
+      color: white;
+      border-color: #318285;
+}
+.desktopHeader .search{
+     position: relative;
+     border-radius: 50px;
+     width: 300px;
+     overflow: hidden;
+}
+.desktopHeader .search.show{
+     box-shadow: 3px 6px 13px rgba(0, 0, 0, 0.192);
+}
+.desktopHeader .side svg{
+       position: absolute;
+       top: 10px;
+       right: 10px;
+       cursor: pointer;
+       transition: all 1s ease;
+
+}
+
+.desktopHeader .active>.side svg #Path_2{
+     fill: #111111;
+}
+.desktopHeader .search>input{
+          height: 50px;
+          border: none;
+          width: 0px;
+          border-radius: 50px;
+          transition: .4s all ease;
+}
+.desktopHeader .search.show>input{
+          height: 50px;
+          transition: .4s all ease;
+          padding: 0px 20px;
+          border: none;
+          width: 300px;
+          border-radius: 50px;
+}
+.desktopHeader .search.show>.svg svg #Path_2{
+     fill: #111111;
+         
+}
+.desktopHeader .navbar {
+     transition: all 0.4s;
+ }
+ 
+ /* Change navbar styling on scroll */
+ .desktopHeader  .navbar.active {
+     background: #fff;
+     box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+ }
+ .desktopHeader .navbar.active .nav-link {
+     color: #111;
+ }
+ .desktopHeader .navbar.active .nav-link:hover,
+ .desktopHeader  .navbar.active .nav-link:focus {
+     color: #555;
+     text-decoration: none;
+ }
+ .desktopHeader .navbar.active .navbar-brand {
+     color: #555;
+ }
+ .desktopHeader .border-md {
+ border-width: 2px !important;
+ }
+
+ .desktopHeader  .separator {
+ border-bottom: 1px dashed #aaa;
+ }
+
+ .desktopHeader .text-small {
+ font-size: 0.85rem;
+ }
+ .desktopHeader  .navbar.active>.logo .logoB{
+     display: inline-block;
+ }
+.desktopHeader .navbar.active>.logo .logoW,
+.desktopHeader .session_active .join,
+.desktopHeader  .navbar>.logo .logoB,
+.desktopHeader .no_session .acc_img{
+     display: none;
+ }
+.desktopHeader .session_active .acc_img{
+     display: block;
+}
+.desktopHeader .account{
+     position:relative;
+}
+.desktopHeader .account .acc_box{
+     position:absolute;
+     right:0px;
+     background:#fff;
+     color:#000;
+     width: 300px;
+     height:0px;
+     overflow:hidden;
+     transition: all .3s ease;
+}
+.desktopHeader .account .acc_box.active{
+     height:280px;
+     padding: 10px 0 0 10px;
+}
+.desktopHeader .account .acc_box ul{
+     display: flex;
+     flex-direction: column;
+     justify-content: first baseline;
+     margin: 0;
+}
+.desktopHeader .account .acc_box li{
+     color:#000;
+     margin-top: 10px;
+}
+.desktopHeader .account .acc_box li.profileImg{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 70px;
+}
+.desktopHeader .account .acc_box li.profileImg img{
+     width:60px;
+}
+.desktopHeader .account .acc_box li.name{
+     text-transform: capitalize;
+     margin-bottom: 10px;
+}
+.desktopHeader .account .acc_box li.email{
+     margin-bottom: 50px;
+}
+.desktopHeader .account .acc_box li.logout{
+      justify-self: flex-end;
+      align-self:center;
+      padding: 10px 0px;
+}
+.desktopHeader .account .acc_box li a{
+      background: #111;
+      padding: 10px 30px;
+      border-radius: 3px;
+      color: white;
+}
+.desktopHeader .account .acc_box li a:hover{
+      background: #fff;
+      border: 2px solid #111;
+      color: #111;
+}
+
+
+/* end of header */
+body>.location{
+      background-color: #e2e2e2;
+      display: flex;
+      align-items: center;
+      padding: 3px 0 3px 40px;
+      text-transform: capitalize;
+      font-size: 14px;
+      box-shadow:inset 0px 0px 5px 0px #0000002e;
+}
+body>.location img{
+      transform: rotate(-90deg);
+}
+body>.location>a:hover{
+      color: #318285;
+      text-decoration: underline;
+}
+
+/* .highlight_part .highlights */
+.highlights{
+     height: 600px;
+     overflow: hidden;
+     position: relative;
+ }
+ .highlights>.title{
+      font-size: 1.5em;
+      font-weight: bold;
+      padding: 15px;
+ }
+ .highlights>.highlight_part{
+      position: relative;
+      height: 500px;
+      display: flex;
+      
+      width: fit-content;
+ }
+ .highlights>.highlight_part>.img{
+     
+      background-position: center;
+      background-size: cover;
+      height: 500px;
+      width: 1356px;
+      display: block;
+ }
+ .highlights>.slide{
+      position: absolute;
+      bottom: 50px;
+      left: 45%;
+ }
+ .highlights>.slide,
+ .highlights>.slide>.carousel-inner{
+      width: 100%;
+      height: 30px;
+ }
+ .highlights>.slide>.carousel-inner>.carousel-item{
+     height: 512px;
+ }
+ 
+ .highlights>.slide>span{
+      width: 30px;
+      height: 5px;
+      display: inline-block;
+      border: 1px solid rgb(0, 0, 0);
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 0 10px;
+ }
+ .highlights>.slide>span:hover{
+      background-color: #fff;
+ }
+ .highlights>.slide>.current{
+     background-color: #fff;
+ }
+/* .more .more .more */
+
+.more{
+     margin-bottom: 80px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+.more .box{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.more>.more_inner>span{
+    font-size: 2em;
+    text-transform: capitalize;
+    align-self: flex-start;
+}
+.more>.more_inner>.box>a{
+     display: flex;
+     flex-direction: column;
+     margin: 0 15px;
+     box-shadow: 3px 6px 13px rgba(0, 0, 0, 0.062);
+}
+.more>.more_inner>.box img{
+    width: 250px;
+}
+.more>.more_inner>.box span{
+     font-size: 1.2em;
+     text-transform: capitalize;
+     padding: 10px 0 20px 5px;
+}
+
+/* end of location */
+
+
+
+
+/* scroll bar */
+
+/* width */
+::-webkit-scrollbar {width: 10px;}
+
+/* Track */
+::-webkit-scrollbar-track {box-shadow: inset 0 0 2px grey;}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #111111;
+  border-radius: 4px;
+}
+
+.footer-dark {
+     padding:50px 0;
+     color:#f0f9ff;
+     background-color:#282d32;
+   }
+   
+   .footer-dark h3 {
+     margin-top:0;
+     margin-bottom:12px;
+     font-weight:bold;
+     font-size:16px;
+   }
+   
+   .footer-dark ul {
+     padding:0;
+     list-style:none;
+     line-height:1.6;
+     font-size:14px;
+     margin-bottom:0;
+   }
+   
+   .footer-dark ul a {
+     color:inherit;
+     text-decoration:none;
+     opacity:0.6;
+   }
+   
+   .footer-dark ul a:hover {
+     opacity:0.8;
+   }
+   
+   @media (max-width:767px) {
+     .footer-dark .item:not(.social) {
+       text-align:center;
+       padding-bottom:20px;
+     }
+   }
+   
+   .footer-dark .item.text {
+     margin-bottom:36px;
+   }
+   
+   @media (max-width:767px) {
+     .footer-dark .item.text {
+       margin-bottom:0;
+     }
+   }
+   
+   .footer-dark .item.text p {
+     opacity:0.6;
+     margin-bottom:0;
+   }
+   
+   .footer-dark .item.social {
+     text-align:center;
+   }
+   
+   @media (max-width:991px) {
+     .footer-dark .item.social {
+       text-align:center;
+       margin-top:20px;
+     }
+   }
+   
+   .footer-dark .item.social > a {
+     font-size:20px;
+     width:36px;
+     height:36px;
+     line-height:36px;
+     display:inline-block;
+     text-align:center;
+     border-radius:50%;
+     box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+     margin:0 8px;
+     color:#fff;
+     opacity:0.75;
+   }
+   
+   .footer-dark .item.social > a:hover {
+     opacity:0.9;
+   }
+   
+   .footer-dark .copyright {
+     text-align:center;
+     padding-top:24px;
+     opacity:0.3;
+     font-size:13px;
+     margin-bottom:0;
+   }
+   
